@@ -1,9 +1,13 @@
 // id에 따라 다양한 페이지를 만들고싶으면 기억해 [] 다이나믹라우트
 import { DUMMY_NEWS } from "../../../dummy-news";
+import { notFound } from 'next/navigation';
 
 export default function NewsDetailPage({ params /*현재 접속한 id를 알고싶을때 */}) {
     const newsSlug = params.slug;
     const news = DUMMY_NEWS.find( news => news.slug === newsSlug );
+    if (!news) {
+        notFound();
+    }
 
     return (
         <article>
