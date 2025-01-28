@@ -1,2 +1,2 @@
-# news
-Udemy_example_news
+# NEWS
+Udemy_example_News
